@@ -1,0 +1,102 @@
+import fs from "fs";
+import path from "path";
+import Link from "next/link";
+import matter from "gray-matter";
+import type { Metadata } from "next";
+import FadeInWhenVisible from "@/components/FadeInWhenVisible";
+
+export const metadata: Metadata = {
+  title: "News",
+};
+
+type NewsItem = {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+};
+
+function getAllNews(): NewsItem[] {
+  const newsDir = path.join(process.cwd(), "content/news");
+  if (!fs.existsSync(newsDir)) return [];
+
+  const files = fs.readdirSync(newsDir).filter((f) => f.endsWith(".mdx"));
+  const items = files.map((file) => {
+    const raw = fs.readFileSync(path.join(newsDir, file), "utf-8");
+    const { data } = matter(raw);
+    return {
+      slug: file.replace(/\.mdx$/, ""),
+      title: data.title ?? "Untitled",
+      date: data.date ?? "",
+      excerpt: data.excerpt ?? "",
+    };
+  });
+
+  return items.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+}
+
+function formatDate(dateStr: string): string {
+  if (!dateStr) return "";
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export default function NewsPage() {
+  const items = getAllNews();
+
+  return (
+    <div className="pt-28 pb-32">
+      {/* Page header */}
+      <section className="max-w-6xl mx-auto px-6 mb-20">
+        <FadeInWhenVisible>
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+            News
+          </h1>
+          <p className="mt-4 text-[15px] font-light text-[#86868b] max-w-md leading-relaxed">
+            Updates from the lab — new papers, awards, and announcements.
+          </p>
+        </FadeInWhenVisible>
+      </section>
+
+      {/* News list */}
+      <section className="max-w-6xl mx-auto px-6">
+        {items.length === 0 ? (
+          <FadeInWhenVisible>
+            <p className="text-[15px] text-[#86868b]">No news posts yet.</p>
+          </FadeInWhenVisible>
+        ) : (
+          <div className="divide-y divide-[#e5e5ea]">
+            {items.map((item, i) => (
+              <FadeInWhenVisible key={item.slug} delay={i * 0.05}>
+                <Link
+                  href={`/news/${item.slug}`}
+                  className="group block py-8 hover:bg-[#f5f5f7] -mx-4 px-4 rounded-2xl transition-colors duration-200"
+                >
+                  <time className="text-[12px] text-[#86868b] font-light tracking-wide uppercase">
+                    {formatDate(item.date)}
+                  </time>
+                  <h2 className="mt-2 text-[18px] font-semibold text-[#1d1d1f] leading-snug tracking-tight group-hover:text-black transition-colors duration-200">
+                    {item.title}
+                  </h2>
+                  {item.excerpt && (
+                    <p className="mt-2 text-[14px] text-[#86868b] font-light leading-relaxed line-clamp-2">
+                      {item.excerpt}
+                    </p>
+                  )}
+                  <span className="mt-3 inline-block text-[13px] text-[#1d1d1f] group-hover:underline underline-offset-2 transition-all">
+                    Read more →
+                  </span>
+                </Link>
+              </FadeInWhenVisible>
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}

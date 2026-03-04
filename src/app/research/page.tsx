@@ -1,0 +1,100 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import FadeInWhenVisible from "@/components/FadeInWhenVisible";
+import { researchAreas } from "@/data/research";
+
+export default function ResearchPage() {
+  const [openId, setOpenId] = useState<string | null>(
+    researchAreas[0]?.id ?? null,
+  );
+
+  return (
+    <div className="pt-28 pb-32">
+      {/* Page header */}
+      <section className="max-w-6xl mx-auto px-6 mb-20">
+        <FadeInWhenVisible>
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+            Research
+          </h1>
+          <p className="mt-4 text-[16px] font-light text-[#86868b] max-w-lg leading-relaxed">
+            We tackle fundamental open problems and build systems with
+            real-world impact. Our work spans the following research directions.
+          </p>
+        </FadeInWhenVisible>
+      </section>
+
+      {/* Accordion sections */}
+      <section className="max-w-6xl mx-auto px-6">
+        <div className="divide-y divide-[#e5e5ea]">
+          {researchAreas.map((area, idx) => {
+            const isOpen = openId === area.id;
+            return (
+              <FadeInWhenVisible key={area.id} delay={idx * 0.05}>
+                <div id={area.id} className="py-2">
+                  <button
+                    className="w-full flex items-start md:items-center justify-between gap-6 py-6 text-left cursor-pointer group"
+                    onClick={() => setOpenId(isOpen ? null : area.id)}
+                    aria-expanded={isOpen}
+                  >
+                    <div className="flex-1">
+                      <h2 className="text-[clamp(1.4rem,3vw,2.2rem)] font-bold tracking-[-0.025em] text-[#1d1d1f] group-hover:text-black transition-colors leading-tight">
+                        {area.title}
+                      </h2>
+                      <p className="mt-1.5 text-[14px] text-[#86868b] font-light leading-relaxed max-w-2xl">
+                        {area.summary}
+                      </p>
+                    </div>
+                    {/* Open/close indicator */}
+                    <div
+                      className={`w-6 h-6 flex-shrink-0 mt-1 relative transition-transform duration-300 ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                    >
+                      <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-[#86868b] -translate-y-1/2" />
+                      <span className="absolute left-1/2 top-0 h-full w-[1.5px] bg-[#86868b] -translate-x-1/2" />
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          duration: 0.35,
+                          ease: [0.25, 0.1, 0.25, 1],
+                        }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+                          <p className="text-[15px] text-[#1d1d1f] leading-relaxed font-light md:col-span-3">
+                            {area.details}
+                          </p>
+                          {area.image && (
+                            <div className="md:col-span-2 relative aspect-video rounded-xl overflow-hidden bg-[#f5f5f7]">
+                              <Image
+                                src={area.image}
+                                alt={area.title}
+                                fill
+                                className="object-cover img-grayscale"
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeInWhenVisible>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
+}
