@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
+import Image from "next/image";
 import matter from "gray-matter";
 import FadeInWhenVisible from "@/components/FadeInWhenVisible";
 import HeroCarousel from "@/components/HeroCarousel";
@@ -103,10 +104,11 @@ export default function HomePage() {
                 <div className="flex flex-col items-center text-center gap-3">
                   <div className="w-20 h-20 rounded-full bg-[var(--bg-off)] border border-[var(--border)] flex items-center justify-center overflow-hidden">
                     {member.photo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
+                      <Image
                         src={member.photo}
                         alt={member.name}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                       />
                     ) : (

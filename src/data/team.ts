@@ -10,7 +10,7 @@ export type Member = {
 export const pi: Member = {
   name: "Ding Liu, Ph.D.",
   role: "Principal Investigator · Assistant Professor, School of Life Sciences",
-  photo: "",
+  photo: "/images/team/ding.jpg",
   interests:
     "Social homeostasis, hypothalamic circuits, loneliness, neural dynamics",
   website: "",
