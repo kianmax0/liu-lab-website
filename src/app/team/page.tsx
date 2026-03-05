@@ -24,7 +24,7 @@ export default function TeamPage() {
       </section>
 
       {/* PI */}
-        <section className="max-w-[1400px] mx-auto px-8 mb-20">
+      <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
             Principal Investigator

@@ -72,7 +72,10 @@ export default function ContactPage() {
       </section>
 
       {/* Open Positions */}
-      <section id="openings" className="max-w-[1400px] mx-auto px-8 scroll-mt-20">
+      <section
+        id="openings"
+        className="max-w-[1400px] mx-auto px-8 scroll-mt-20"
+      >
         <FadeInWhenVisible>
           <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-[-0.025em] text-[var(--fg)] mb-3">
             Open Positions
