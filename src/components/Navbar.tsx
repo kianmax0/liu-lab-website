@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/publications", label: "Publications" },
   { href: "/team", label: "Team" },
   { href: "/news", label: "News" },
+  { href: "/lab-life", label: "Lab Life" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -50,7 +51,7 @@ export default function Navbar() {
 
         {/* Desktop nav links */}
         <ul className="hidden md:flex items-center gap-7">
-          {navLinks.slice(1).map(({ href, label }) => {
+          {navLinks.map(({ href, label }) => {
             const active = pathname === href || pathname.startsWith(href + "/");
             return (
               <li key={href}>

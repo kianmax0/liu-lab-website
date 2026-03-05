@@ -28,6 +28,7 @@ export default function Footer() {
               { href: "/publications", label: "Publications" },
               { href: "/team", label: "Team" },
               { href: "/news", label: "News" },
+              { href: "/lab-life", label: "Lab Life" },
               { href: "/contact", label: "Contact" },
             ].map(({ href, label }) => (
               <li key={href}>
