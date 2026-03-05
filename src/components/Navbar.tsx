@@ -57,11 +57,14 @@ export default function Navbar() {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`text-[14px] transition-colors duration-200 ${
-                    active
-                      ? "text-[var(--fg)] font-medium"
-                      : "text-[var(--fg-2)] hover:text-[var(--fg)]"
-                  }`}
+                  className={`relative text-[14px] pb-[3px] transition-colors duration-200
+                    after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:bg-[var(--fg)]
+                    after:transition-all after:duration-300 after:ease-in-out
+                    ${
+                      active
+                        ? "text-[var(--fg)] font-medium after:w-full"
+                        : "text-[var(--fg-2)] hover:text-[var(--fg)] after:w-0 hover:after:w-full"
+                    }`}
                 >
                   {label}
                 </Link>
