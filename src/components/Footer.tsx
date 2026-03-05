@@ -5,21 +5,21 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-40 border-t border-[#e5e5ea] bg-[#f5f5f7]">
+    <footer className="mt-40 border-t border-[var(--border)] bg-[var(--bg-off)]">
       <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
-          <p className="text-[13px] font-semibold text-[#1d1d1f] tracking-tight mb-2">
+          <p className="text-[13px] font-semibold text-[var(--fg)] tracking-tight mb-2">
             {site.name}
           </p>
-          <p className="text-[13px] text-[#86868b] leading-relaxed">
+          <p className="text-[13px] text-[var(--fg-2)] leading-relaxed">
             {site.fullName}
           </p>
         </div>
 
         {/* Navigation */}
         <div>
-          <p className="text-[12px] font-semibold text-[#1d1d1f] uppercase tracking-wider mb-3">
+          <p className="text-[12px] font-semibold text-[var(--fg)] uppercase tracking-wider mb-3">
             Navigation
           </p>
           <ul className="flex flex-col gap-2">
@@ -33,7 +33,7 @@ export default function Footer() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200"
+                  className="text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -44,16 +44,16 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <p className="text-[12px] font-semibold text-[#1d1d1f] uppercase tracking-wider mb-3">
+          <p className="text-[12px] font-semibold text-[var(--fg)] uppercase tracking-wider mb-3">
             Contact
           </p>
           <a
             href={`mailto:${site.contact.email}`}
-            className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200 block mb-3"
+            className="text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200 block mb-3"
           >
             {site.contact.email}
           </a>
-          <p className="text-[13px] text-[#86868b] whitespace-pre-line leading-relaxed">
+          <p className="text-[13px] text-[var(--fg-2)] whitespace-pre-line leading-relaxed">
             {site.contact.address}
           </p>
 
@@ -64,7 +64,7 @@ export default function Footer() {
                 href={site.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200"
+                className="text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200"
               >
                 GitHub
               </a>
@@ -74,7 +74,7 @@ export default function Footer() {
                 href={site.links.googleScholar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200"
+                className="text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200"
               >
                 Scholar
               </a>
@@ -84,7 +84,7 @@ export default function Footer() {
                 href={site.links.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200"
+                className="text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200"
               >
                 Twitter
               </a>
@@ -94,7 +94,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 pb-8">
-        <p className="text-[12px] text-[#86868b]">
+        <p className="text-[12px] text-[var(--fg-2)]">
           © {year} {site.name}. All rights reserved.
         </p>
       </div>

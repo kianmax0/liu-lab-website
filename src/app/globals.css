@@ -18,6 +18,28 @@
   --color-apple-border: #e5e5ea;
 }
 
+/* ── Theme variables (light / dark) ─────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --bg-off: #f5f5f7;
+  --fg: #1d1d1f;
+  --fg-2: #86868b;
+  --heading: #000000;
+  --border: #e5e5ea;
+  --ghost: #f0f0f0;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+}
+.dark {
+  --bg: #000000;
+  --bg-off: #111113;
+  --fg: #f5f5f7;
+  --fg-2: #a1a1a6;
+  --heading: #ffffff;
+  --border: #2a2a2e;
+  --ghost: #1a1a1e;
+  --nav-bg: rgba(0, 0, 0, 0.85);
+}
+
 /* ── Global resets & base styles ────────────────────────────── */
 *,
 *::before,
@@ -33,21 +55,24 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #1d1d1f;
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: var(--font-sans);
   line-height: 1.6;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* ── Text selection ──────────────────────────────────────────── */
 ::selection {
-  background-color: #1d1d1f;
-  color: #ffffff;
+  background-color: var(--fg);
+  color: var(--bg);
 }
 
 /* ── Focus outline — thin black ring instead of browser default */
 :focus-visible {
-  outline: 2px solid #1d1d1f;
+  outline: 2px solid var(--fg);
   outline-offset: 2px;
 }
 
@@ -60,9 +85,15 @@ body {
   filter: grayscale(0%);
 }
 
+.nav-blur-bg {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 /* ── MDX / prose content styles ──────────────────────────────── */
 .prose {
-  color: #1d1d1f;
+  color: var(--fg);
   max-width: 68ch;
   font-size: 1.0625rem;
   line-height: 1.75;
@@ -70,7 +101,7 @@ body {
 .prose h1,
 .prose h2,
 .prose h3 {
-  color: #000000;
+  color: var(--heading);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-top: 2rem;
@@ -89,18 +120,18 @@ body {
   margin-bottom: 1.25rem;
 }
 .prose strong {
-  color: #000000;
+  color: var(--heading);
   font-weight: 600;
 }
 .prose a {
-  color: #1d1d1f;
+  color: var(--fg);
   text-decoration-line: underline;
-  text-decoration-color: #d2d2d7;
+  text-decoration-color: var(--border);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.2s ease;
 }
 .prose a:hover {
-  text-decoration-color: #1d1d1f;
+  text-decoration-color: var(--fg);
 }
 .prose ul,
 .prose ol {
@@ -111,22 +142,22 @@ body {
   margin-bottom: 0.4rem;
 }
 .prose blockquote {
-  border-left: 2px solid #d2d2d7;
+  border-left: 2px solid var(--border);
   padding-left: 1rem;
-  color: #86868b;
+  color: var(--fg-2);
   font-style: italic;
   margin-left: 0;
 }
 .prose code {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 0.875em;
-  background: #f5f5f7;
+  background: var(--bg-off);
   padding: 0.15em 0.4em;
   border-radius: 4px;
-  color: #1d1d1f;
+  color: var(--fg);
 }
 .prose pre {
-  background: #f5f5f7;
+  background: var(--bg-off);
   padding: 1.25rem;
   border-radius: 8px;
   overflow-x: auto;
@@ -137,6 +168,6 @@ body {
 }
 .prose hr {
   border: none;
-  border-top: 1px solid #e5e5ea;
+  border-top: 1px solid var(--border);
   margin: 2.5rem 0;
 }

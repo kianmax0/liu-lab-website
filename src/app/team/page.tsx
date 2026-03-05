@@ -13,10 +13,10 @@ export default function TeamPage() {
       {/* Page header */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <FadeInWhenVisible>
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Team
           </h1>
-          <p className="mt-4 text-[15px] font-light text-[#86868b] max-w-md leading-relaxed">
+          <p className="mt-4 text-[15px] font-light text-[var(--fg-2)] max-w-md leading-relaxed">
             A diverse group of researchers united by curiosity and rigour. Hover
             over a card to see research interests.
           </p>
@@ -26,7 +26,7 @@ export default function TeamPage() {
       {/* PI */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <FadeInWhenVisible>
-          <h2 className="text-[12px] font-semibold text-[#86868b] uppercase tracking-widest mb-10">
+          <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
             Principal Investigator
           </h2>
         </FadeInWhenVisible>
@@ -38,13 +38,13 @@ export default function TeamPage() {
               {pi.email && (
                 <a
                   href={`mailto:${pi.email}`}
-                  className="mt-3 inline-block text-[13px] text-[#86868b] hover:text-[#1d1d1f] transition-colors duration-200"
+                  className="mt-3 inline-block text-[13px] text-[var(--fg-2)] hover:text-[var(--fg)] transition-colors duration-200"
                 >
                   {pi.email}
                 </a>
               )}
               {pi.interests && (
-                <p className="mt-3 text-[14px] text-[#86868b] font-light leading-relaxed">
+                <p className="mt-3 text-[14px] text-[var(--fg-2)] font-light leading-relaxed">
                   {pi.interests}
                 </p>
               )}
@@ -57,7 +57,7 @@ export default function TeamPage() {
       {currentMembers.length > 0 && (
         <section className="max-w-6xl mx-auto px-6 mb-20">
           <FadeInWhenVisible>
-            <h2 className="text-[12px] font-semibold text-[#86868b] uppercase tracking-widest mb-10">
+            <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
               Current Members
             </h2>
           </FadeInWhenVisible>
@@ -76,7 +76,7 @@ export default function TeamPage() {
       {alumni.length > 0 && (
         <section className="max-w-6xl mx-auto px-6">
           <FadeInWhenVisible>
-            <h2 className="text-[12px] font-semibold text-[#86868b] uppercase tracking-widest mb-10">
+            <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
               Alumni
             </h2>
           </FadeInWhenVisible>

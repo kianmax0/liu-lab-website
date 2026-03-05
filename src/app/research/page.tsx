@@ -16,10 +16,10 @@ export default function ResearchPage() {
       {/* Page header */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <FadeInWhenVisible>
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Research
           </h1>
-          <p className="mt-4 text-[16px] font-light text-[#86868b] max-w-lg leading-relaxed">
+          <p className="mt-4 text-[16px] font-light text-[var(--fg-2)] max-w-lg leading-relaxed">
             We tackle fundamental open problems and build systems with
             real-world impact. Our work spans the following research directions.
           </p>
@@ -28,7 +28,7 @@ export default function ResearchPage() {
 
       {/* Accordion sections */}
       <section className="max-w-6xl mx-auto px-6">
-        <div className="divide-y divide-[#e5e5ea]">
+        <div className="divide-y divide-[var(--border)]">
           {researchAreas.map((area, idx) => {
             const isOpen = openId === area.id;
             return (
@@ -40,10 +40,10 @@ export default function ResearchPage() {
                     aria-expanded={isOpen}
                   >
                     <div className="flex-1">
-                      <h2 className="text-[clamp(1.4rem,3vw,2.2rem)] font-bold tracking-[-0.025em] text-[#1d1d1f] group-hover:text-black transition-colors leading-tight">
+                      <h2 className="text-[clamp(1.4rem,3vw,2.2rem)] font-bold tracking-[-0.025em] text-[var(--fg)] group-hover:text-[var(--heading)] transition-colors leading-tight">
                         {area.title}
                       </h2>
-                      <p className="mt-1.5 text-[14px] text-[#86868b] font-light leading-relaxed max-w-2xl">
+                      <p className="mt-1.5 text-[14px] text-[var(--fg-2)] font-light leading-relaxed max-w-2xl">
                         {area.summary}
                       </p>
                     </div>
@@ -53,8 +53,8 @@ export default function ResearchPage() {
                         isOpen ? "rotate-45" : ""
                       }`}
                     >
-                      <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-[#86868b] -translate-y-1/2" />
-                      <span className="absolute left-1/2 top-0 h-full w-[1.5px] bg-[#86868b] -translate-x-1/2" />
+                      <span className="absolute top-1/2 left-0 w-full h-[1.5px] bg-[var(--fg-2)] -translate-y-1/2" />
+                      <span className="absolute left-1/2 top-0 h-full w-[1.5px] bg-[var(--fg-2)] -translate-x-1/2" />
                     </div>
                   </button>
 
@@ -71,11 +71,11 @@ export default function ResearchPage() {
                         className="overflow-hidden"
                       >
                         <div className="pb-8 grid grid-cols-1 md:grid-cols-5 gap-8">
-                          <p className="text-[15px] text-[#1d1d1f] leading-relaxed font-light md:col-span-3">
+                          <p className="text-[15px] text-[var(--fg)] leading-relaxed font-light md:col-span-3">
                             {area.details}
                           </p>
                           {area.image && (
-                            <div className="md:col-span-2 relative aspect-video rounded-xl overflow-hidden bg-[#f5f5f7]">
+                            <div className="md:col-span-2 relative aspect-video rounded-xl overflow-hidden bg-[var(--bg-off)]">
                               <Image
                                 src={area.image}
                                 alt={area.title}

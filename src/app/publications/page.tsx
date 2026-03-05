@@ -24,15 +24,15 @@ export default function PublicationsPage() {
       {/* Page header */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <FadeInWhenVisible>
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Publications
           </h1>
-          <p className="mt-4 text-[15px] font-light text-[#86868b] max-w-md leading-relaxed">
+          <p className="mt-4 text-[15px] font-light text-[var(--fg-2)] max-w-md leading-relaxed">
             Lab members are{" "}
-            <span className="font-semibold text-[#1d1d1f] underline underline-offset-2 decoration-[#d2d2d7]">
+            <span className="font-semibold text-[var(--fg)] underline underline-offset-2 decoration-[var(--border)]">
               underlined
             </span>
-            . Links appear on hover.
+            . Links appear inline.
           </p>
         </FadeInWhenVisible>
       </section>
@@ -43,7 +43,7 @@ export default function PublicationsPage() {
           <div key={year} className="mb-16">
             {/* Year divider */}
             <FadeInWhenVisible delay={groupIdx * 0.04}>
-              <h2 className="text-[clamp(3.5rem,9vw,7rem)] font-extrabold tracking-[-0.04em] text-[#f0f0f0] leading-none select-none mb-0 -ml-1">
+              <h2 className="text-[clamp(3.5rem,9vw,7rem)] font-extrabold tracking-[-0.04em] text-[var(--ghost)] leading-none select-none mb-0 -ml-1">
                 {year}
               </h2>
               <div className="-mt-3 mb-1" />

@@ -54,10 +54,10 @@ export default function NewsPage() {
       {/* Page header */}
       <section className="max-w-6xl mx-auto px-6 mb-20">
         <FadeInWhenVisible>
-          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[#000000] leading-tight">
+          <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             News
           </h1>
-          <p className="mt-4 text-[15px] font-light text-[#86868b] max-w-md leading-relaxed">
+          <p className="mt-4 text-[15px] font-light text-[var(--fg-2)] max-w-md leading-relaxed">
             Updates from the lab — new papers, awards, and announcements.
           </p>
         </FadeInWhenVisible>
@@ -67,28 +67,28 @@ export default function NewsPage() {
       <section className="max-w-6xl mx-auto px-6">
         {items.length === 0 ? (
           <FadeInWhenVisible>
-            <p className="text-[15px] text-[#86868b]">No news posts yet.</p>
+            <p className="text-[15px] text-[var(--fg-2)]">No news posts yet.</p>
           </FadeInWhenVisible>
         ) : (
-          <div className="divide-y divide-[#e5e5ea]">
+          <div className="divide-y divide-[var(--border)]">
             {items.map((item, i) => (
               <FadeInWhenVisible key={item.slug} delay={i * 0.05}>
                 <Link
                   href={`/news/${item.slug}`}
-                  className="group block py-8 hover:bg-[#f5f5f7] -mx-4 px-4 rounded-2xl transition-colors duration-200"
+                  className="group block py-8 hover:bg-[var(--bg-off)] -mx-4 px-4 rounded-2xl transition-colors duration-200"
                 >
-                  <time className="text-[12px] text-[#86868b] font-light tracking-wide uppercase">
+                  <time className="text-[12px] text-[var(--fg-2)] font-light tracking-wide uppercase">
                     {formatDate(item.date)}
                   </time>
-                  <h2 className="mt-2 text-[18px] font-semibold text-[#1d1d1f] leading-snug tracking-tight group-hover:text-black transition-colors duration-200">
+                  <h2 className="mt-2 text-[18px] font-semibold text-[var(--fg)] leading-snug tracking-tight group-hover:text-[var(--heading)] transition-colors duration-200">
                     {item.title}
                   </h2>
                   {item.excerpt && (
-                    <p className="mt-2 text-[14px] text-[#86868b] font-light leading-relaxed line-clamp-2">
+                    <p className="mt-2 text-[14px] text-[var(--fg-2)] font-light leading-relaxed line-clamp-2">
                       {item.excerpt}
                     </p>
                   )}
-                  <span className="mt-3 inline-block text-[13px] text-[#1d1d1f] group-hover:underline underline-offset-2 transition-all">
+                  <span className="mt-3 inline-block text-[13px] text-[var(--fg)] group-hover:underline underline-offset-2 transition-all">
                     Read more →
                   </span>
                 </Link>

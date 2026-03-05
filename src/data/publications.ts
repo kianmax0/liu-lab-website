@@ -26,18 +26,15 @@ export const publications: Publication[] = [
     ],
     venue: "Nature 640 (8060), 1000–1010.",
     pdfUrl: "",
-    doiUrl: "",
+    doiUrl: "https://doi.org/10.1038/s41586-025-08740-2",
   },
   {
     year: 2025,
     title: "Molecular and Cellular Basis of Instinctive Social Need.",
-    authors: [
-      { name: "D Liu", labMember: true },
-      { name: "C Dulac" },
-    ],
+    authors: [{ name: "D Liu", labMember: true }, { name: "C Dulac" }],
     venue: "Current Opinion in Neurobiology.",
     pdfUrl: "",
-    doiUrl: "",
+    doiUrl: "https://doi.org/10.1016/j.conb.2025.102934",
   },
 
   // ── 2022 ──────────────────────────────────────────────────
@@ -56,7 +53,7 @@ export const publications: Publication[] = [
     ],
     venue: "Nature 606 (7916), 937–944.",
     pdfUrl: "",
-    doiUrl: "",
+    doiUrl: "https://doi.org/10.1038/s41586-022-04793-z",
   },
 
   // ── 2014 ──────────────────────────────────────────────────
@@ -77,7 +74,6 @@ export const publications: Publication[] = [
     ],
     venue: "Science 346 (6208), 458–463.",
     pdfUrl: "",
-    doiUrl: "",
+    doiUrl: "https://doi.org/10.1126/science.1256573",
   },
 ];
-

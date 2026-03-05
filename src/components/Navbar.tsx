@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { site } from "@/data/site";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -34,7 +35,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-white/75 border-b border-[#e5e5ea]/60"
+          ? "nav-blur-bg border-b border-[var(--border)]"
           : "bg-transparent"
       }`}
     >
@@ -42,7 +43,7 @@ export default function Navbar() {
         {/* Logo / Lab name */}
         <Link
           href="/"
-          className="text-[#1d1d1f] font-semibold text-[15px] tracking-tight hover:text-black transition-colors"
+          className="text-[var(--fg)] font-semibold text-[15px] tracking-tight hover:text-[var(--heading)] transition-colors"
         >
           {site.name}
         </Link>
@@ -57,8 +58,8 @@ export default function Navbar() {
                   href={href}
                   className={`text-[14px] transition-colors duration-200 ${
                     active
-                      ? "text-[#1d1d1f] font-medium"
-                      : "text-[#86868b] hover:text-[#1d1d1f]"
+                      ? "text-[var(--fg)] font-medium"
+                      : "text-[var(--fg-2)] hover:text-[var(--fg)]"
                   }`}
                 >
                   {label}
@@ -68,39 +69,44 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-5 h-[1.5px] bg-[#1d1d1f] transition-all duration-200 ${
-              menuOpen ? "rotate-45 translate-y-[6.5px]" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-[#1d1d1f] transition-all duration-200 ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-[#1d1d1f] transition-all duration-200 ${
-              menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
-            }`}
-          />
-        </button>
+        {/* Right side: theme toggle + hamburger */}
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-5 h-[1.5px] bg-[var(--fg)] transition-all duration-200 ${
+                menuOpen ? "rotate-45 translate-y-[6.5px]" : ""
+              }`}
+            />
+            <span
+              className={`block w-5 h-[1.5px] bg-[var(--fg)] transition-all duration-200 ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block w-5 h-[1.5px] bg-[var(--fg)] transition-all duration-200 ${
+                menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
+              }`}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden backdrop-blur-md bg-white/90 border-b border-[#e5e5ea]/60 px-6 pb-5 pt-2">
+        <div className="md:hidden bg-[var(--bg)] border-b border-[var(--border)] px-6 pb-5 pt-2">
           <ul className="flex flex-col gap-3">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="block text-[15px] text-[#1d1d1f] py-1 hover:text-black transition-colors"
+                  className="block text-[15px] text-[var(--fg)] py-1 hover:text-[var(--heading)] transition-colors"
                 >
                   {label}
                 </Link>
