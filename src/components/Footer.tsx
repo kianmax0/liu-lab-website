@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-40 border-t border-[var(--border)] bg-[var(--bg-off)]">
-      <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-[1400px] mx-auto px-8 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
           <p className="text-[13px] font-semibold text-[var(--fg)] tracking-tight mb-2">
@@ -93,7 +93,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pb-8">
+      <div className="max-w-[1400px] mx-auto px-8 pb-8">
         <p className="text-[12px] text-[var(--fg-2)]">
           © {year} {site.name}. All rights reserved.
         </p>

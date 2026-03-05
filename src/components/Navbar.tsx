@@ -39,7 +39,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <nav className="max-w-[1400px] mx-auto px-8 h-14 flex items-center justify-between">
         {/* Logo / Lab name */}
         <Link
           href="/"

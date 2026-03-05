@@ -14,7 +14,7 @@ export default function ResearchPage() {
   return (
     <div className="pt-28 pb-32">
       {/* Page header */}
-      <section className="max-w-6xl mx-auto px-6 mb-20">
+      <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Research
@@ -27,7 +27,7 @@ export default function ResearchPage() {
       </section>
 
       {/* Accordion sections */}
-      <section className="max-w-6xl mx-auto px-6">
+      <section className="max-w-[1400px] mx-auto px-8">
         <div className="divide-y divide-[var(--border)]">
           {researchAreas.map((area, idx) => {
             const isOpen = openId === area.id;

@@ -54,7 +54,7 @@ export default async function NewsPostPage({
 
   return (
     <div className="pt-28 pb-32">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-[900px] mx-auto px-8">
         {/* Back link */}
         <FadeInWhenVisible>
           <Link

@@ -11,7 +11,7 @@ export default function TeamPage() {
   return (
     <div className="pt-28 pb-32">
       {/* Page header */}
-      <section className="max-w-6xl mx-auto px-6 mb-20">
+      <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Team
@@ -24,7 +24,7 @@ export default function TeamPage() {
       </section>
 
       {/* PI */}
-      <section className="max-w-6xl mx-auto px-6 mb-20">
+        <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
             Principal Investigator
@@ -55,7 +55,7 @@ export default function TeamPage() {
 
       {/* Current members */}
       {currentMembers.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6 mb-20">
+        <section className="max-w-[1400px] mx-auto px-8 mb-20">
           <FadeInWhenVisible>
             <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
               Current Members
@@ -74,7 +74,7 @@ export default function TeamPage() {
 
       {/* Alumni */}
       {alumni.length > 0 && (
-        <section className="max-w-6xl mx-auto px-6">
+        <section className="max-w-[1400px] mx-auto px-8">
           <FadeInWhenVisible>
             <h2 className="text-[12px] font-semibold text-[var(--fg-2)] uppercase tracking-widest mb-10">
               Alumni

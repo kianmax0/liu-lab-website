@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div className="pt-28 pb-32">
       {/* Page header */}
-      <section className="max-w-6xl mx-auto px-6 mb-20">
+      <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Contact
@@ -23,7 +23,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact info + address */}
-      <section className="max-w-6xl mx-auto px-6 mb-24">
+      <section className="max-w-[1400px] mx-auto px-8 mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <FadeInWhenVisible>
             <div>
@@ -32,7 +32,8 @@ export default function ContactPage() {
               </h2>
               <a
                 href={`mailto:${site.contact.email}`}
-                className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-semibold text-[var(--fg)] hover:text-[var(--heading)] underline underline-offset-4 decoration-[var(--border)] hover:decoration-[var(--fg)] transition-all duration-200 tracking-tight">
+                className="text-[clamp(1.1rem,2.5vw,1.5rem)] font-semibold text-[var(--fg)] hover:text-[var(--heading)] underline underline-offset-4 decoration-[var(--border)] hover:decoration-[var(--fg)] transition-all duration-200 tracking-tight"
+              >
                 {site.contact.email}
               </a>
               <p className="mt-8 text-[14px] text-[var(--fg-2)] font-light whitespace-pre-line leading-[1.8]">
@@ -71,7 +72,7 @@ export default function ContactPage() {
       </section>
 
       {/* Open Positions */}
-      <section id="openings" className="max-w-6xl mx-auto px-6 scroll-mt-20">
+      <section id="openings" className="max-w-[1400px] mx-auto px-8 scroll-mt-20">
         <FadeInWhenVisible>
           <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-bold tracking-[-0.025em] text-[var(--fg)] mb-3">
             Open Positions

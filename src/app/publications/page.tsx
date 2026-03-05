@@ -22,7 +22,7 @@ export default function PublicationsPage() {
   return (
     <div className="pt-28 pb-32">
       {/* Page header */}
-      <section className="max-w-6xl mx-auto px-6 mb-20">
+      <section className="max-w-[1400px] mx-auto px-8 mb-20">
         <FadeInWhenVisible>
           <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold tracking-[-0.03em] text-[var(--heading)] leading-tight">
             Publications
@@ -38,7 +38,7 @@ export default function PublicationsPage() {
       </section>
 
       {/* Publications list grouped by year */}
-      <section className="max-w-6xl mx-auto px-6">
+      <section className="max-w-[1400px] mx-auto px-8">
         {grouped.map(([year, pubs], groupIdx) => (
           <div key={year} className="mb-16">
             {/* Year divider */}
