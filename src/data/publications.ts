@@ -11,6 +11,17 @@ export type Publication = {
 };
 
 export const publications: Publication[] = [
+  // ── 2026 ──────────────────────────────────────────────────
+  {
+    year: 2026,
+    title:
+      "In Vivo Calcium Imaging with a Miniaturized Microscope in the Hypothalamus for Understanding Social Behaviors in Mice",
+    authors: [{ name: "Authors to be updated" }],
+    venue: "Journal of Visualized Experiments (JoVE).",
+    doiUrl:
+      "https://www.jove.com/t/70401/in-vivo-calcium-imaging-with-miniaturized-microscope-hypothalamus-for",
+  },
+
   // ── 2025 ──────────────────────────────────────────────────
   {
     year: 2025,
@@ -26,15 +37,7 @@ export const publications: Publication[] = [
     ],
     venue: "Nature 640 (8060), 1000–1010.",
     pdfUrl: "",
-    doiUrl: "https://doi.org/10.1038/s41586-025-08740-2",
-  },
-  {
-    year: 2025,
-    title: "Molecular and Cellular Basis of Instinctive Social Need.",
-    authors: [{ name: "D Liu", labMember: true }, { name: "C Dulac" }],
-    venue: "Current Opinion in Neurobiology.",
-    pdfUrl: "",
-    doiUrl: "https://doi.org/10.1016/j.conb.2025.102934",
+    doiUrl: "https://www.nature.com/articles/s41586-025-08617-8",
   },
 
   // ── 2022 ──────────────────────────────────────────────────

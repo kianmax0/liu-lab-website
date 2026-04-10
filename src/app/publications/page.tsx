@@ -43,7 +43,7 @@ export default function PublicationsPage() {
           <div key={year} className="mb-16">
             {/* Year divider */}
             <FadeInWhenVisible delay={groupIdx * 0.04}>
-              <h2 className="text-[clamp(3.5rem,9vw,7rem)] font-extrabold tracking-[-0.04em] text-[var(--ghost)] leading-none select-none mb-0 -ml-1">
+              <h2 className="text-[clamp(3rem,8vw,6rem)] font-extrabold tracking-[-0.04em] text-[var(--ghost)] leading-none select-none mb-0 -ml-1">
                 {year}
               </h2>
               <div className="-mt-3 mb-1" />

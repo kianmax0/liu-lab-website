@@ -4,16 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import matter from "gray-matter";
 import FadeInWhenVisible from "@/components/FadeInWhenVisible";
-import HeroCarousel from "@/components/HeroCarousel";
 import { site } from "@/data/site";
 import { pi, currentMembers } from "@/data/team";
-
-// ── Add your lab hero images here ──────────────────────────────
-// Drop files into /public/images/ and list them below.
-const heroSlides: { src: string; alt: string; caption?: string }[] = [
-  // Example:
-  // { src: "/liu-lab-website/images/hero-1.jpg", alt: "Hypothalamic neurons" },
-];
 
 type NewsItem = { slug: string; title: string; date: string; excerpt: string };
 
@@ -59,7 +51,16 @@ export default function HomePage() {
         <p className="mt-6 text-[clamp(1rem,2.2vw,1.3rem)] font-light text-[var(--fg-2)] max-w-2xl mx-auto leading-relaxed">
           {site.fullName}
         </p>
-        <HeroCarousel slides={heroSlides} />
+        <div className="relative w-full max-w-4xl aspect-square mt-12">
+          <Image
+            src="/images/home-mice.png"
+            alt="Social behavior paradigm illustration"
+            fill
+            className="object-contain rotate-90 p-2"
+            sizes="(max-width: 768px) 100vw, 896px"
+            priority
+          />
+        </div>
       </section>
 
       {/* ── ABOUT + RESEARCH (merged) ──────────────────────────── */}

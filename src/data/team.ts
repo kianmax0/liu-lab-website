@@ -8,9 +8,9 @@ export type Member = {
 };
 
 export const pi: Member = {
-  name: "Ding Liu, Ph.D.",
+  name: "Ding LIU, Ph.D.",
   role: "Principal Investigator · Assistant Professor, School of Life Sciences",
-  photo: "/images/team/ding.jpg",
+  photo: "/images/team/DingLIU.jpg",
   interests:
     "Social homeostasis, hypothalamic circuits, loneliness, neural dynamics",
   website: "",
@@ -19,22 +19,58 @@ export const pi: Member = {
 
 export const currentMembers: Member[] = [
   {
-    name: "Open Position",
+    name: "Yuki DAI",
     role: "Postdoctoral Fellow",
-    photo: "",
-    interests: "Neuropixels recording in freely behaving animals",
+    photo: "/images/team/YukiDAI.jpg",
+    interests: "The relationship between social and hunger",
   },
   {
-    name: "Open Position",
-    role: "Postdoctoral Fellow",
-    photo: "",
-    interests: "Calcium imaging, sensory–circuit interactions",
+    name: "Chenxing WEI",
+    role: "RA",
+    photo: "/images/team/ChenxingWEI.jpg",
+    interests: "Research interests to be updated.",
   },
   {
-    name: "Open Position",
+    name: "Qian RAO",
+    role: "RA",
+    photo: "/images/team/QianRAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Yibo YUAN",
+    role: "RA",
+    photo: "/images/team/YiboYUAN.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Tianyang CHEN",
+    role: "Administrative Assistant",
+    photo: "/images/team/TianyangCHEN.jpg",
+    interests: "Administrative support and lab coordination.",
+  },
+  {
+    name: "Ziyan YAN",
+    role: "Visiting Student",
+    photo: "/images/team/ZiyanYAN.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Kun ZHAO",
+    role: "Undergraduate",
+    photo: "/images/team/KunZHAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Bokai CAO",
     role: "Ph.D. Student",
-    photo: "",
-    interests: "Systems neuroscience, social behavior",
+    photo: "/images/team/BokaiCAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Zimeng GAO",
+    role: "Ph.D. Student",
+    photo: "/images/team/ZimengGAO.jpg",
+    interests: "Research interests to be updated.",
   },
 ];
 

@@ -19,7 +19,7 @@ export const site = {
     email: "liuding@westlake.edu.cn",
     address:
       "School of Life Sciences, Westlake University\nYungu Campus: No. 600 Dunyu Road\nXihu District, Hangzhou, Zhejiang\nChina",
-    mapEmbedUrl: "",
+    mapEmbedUrl: "https://www.google.com/maps?q=Westlake+University&output=embed",
   },
 
   openPositions: [

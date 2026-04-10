@@ -8,28 +8,30 @@ export type ResearchArea = {
 
 export const researchAreas: ResearchArea[] = [
   {
-    id: "social-homeostasis",
-    title: "Social Homeostasis & Loneliness",
-    summary: "How does the brain encode the feeling of loneliness?",
-    details:
-      "We have established quantitative behavioral paradigms and identified specific hypothalamic neurons and circuits that govern social need, revealing a homeostatic process underlying the regulation of social drive. Our work provides a mechanistic framework for understanding loneliness as a biological state — akin to hunger or thirst — that motivates social seeking and is resolved by social contact.",
-    image: "",
-  },
-  {
-    id: "tactile-input",
-    title: "The Power of Tactile Input",
-    summary: "Touch plays a key role in alleviating loneliness.",
-    details:
-      "We explore how tactile inputs influence social interaction and how sensory information is integrated into the social neural network to satisfy fundamental human and animal needs. By dissecting the sensory pathways that relay touch to limbic and hypothalamic circuits, we aim to understand why physical contact is so essential to social well-being and how its disruption contributes to social disorders.",
-    image: "",
-  },
-  {
-    id: "network-dynamics",
-    title: "Neural Network Dynamics",
+    id: "modeling-social-homeostasis",
+    title: "Modeling Social Homeostasis: Representation of Social Needs in the MPN",
     summary:
-      "What are the basic units and operational rules of a social neural network?",
+      "How does the brain track and represent social need as a fundamental physiological drive?",
     details:
-      "We utilize cutting-edge techniques — including calcium imaging and Neuropixels recordings in freely behaving animals — to decode the complex dynamics of the brain during social interaction. By recording from hundreds of neurons simultaneously, we aim to reveal the population-level codes and dynamic motifs that orchestrate the full spectrum of social behaviors.",
+      "Just as the body requires food and water, social animals have a fundamental, hard-wired need for social interaction. Our lab investigates the neural dynamics of social homeostasis with a primary focus on the Medial Preoptic Nucleus (MPN). Using in vivo calcium imaging and optogenetics, we map and manipulate the specific neural ensembles encoding social motivation. To capture the full spectrum of social need, we use both acute deprivation models, such as the classic isolation-reunion (resident-intruder) paradigm, and an innovative custom-designed 2-chamber assay to continuously monitor natural circadian-like fluctuations of social drive throughout the day.",
+    image: "",
+  },
+  {
+    id: "competing-drives-feeding-social",
+    title: "Competing Drives: The Interplay Between Feeding and Social Behaviors",
+    summary:
+      "What happens when an animal is simultaneously hungry and lonely?",
+    details:
+      "Survival in a complex environment often requires the brain to prioritize competing physiological demands. We explore the hierarchical organization of innate drives, specifically investigating how states of severe energy deficit prioritize foraging while suppressing social behaviors. By dissecting the functional crosstalk between classical feeding centers, namely the AgRP and POMC neurons in the arcuate nucleus, and social hubs like the MPN, we aim to uncover the circuit-level mechanisms that orchestrate behavioral choices when internal needs collide.",
+    image: "",
+  },
+  {
+    id: "sensory-integration-motion-sickness",
+    title: "Sensory Integration and Pathology: Neural Mechanisms of Motion Sickness",
+    summary:
+      "How do central circuits transform sensory mismatch into autonomic distress?",
+    details:
+      "Motion sickness is a profound systemic response to sensory conflict, such as visual and vestibular mismatch, yet the precise central circuits mediating this distress remain elusive. Our lab takes a translational approach to understand the neuropharmacology of motion sickness, particularly how antihistamines exert therapeutic effects. Using a customized shaker-induced motion sickness paradigm in mice, we quantify the systemic response through behavioral and physiological readouts, including pica behavior, decreased locomotion, and body temperature fluctuations. Mechanistically, we focus on the neural dialogue between the Vestibular Nuclei and the histaminergic Tuberomammillary Nucleus (TMN) to elucidate pathways that convert sensory mismatch into autonomic distress.",
     image: "",
   },
 ];

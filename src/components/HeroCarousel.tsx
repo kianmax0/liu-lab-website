@@ -7,6 +7,7 @@ interface Slide {
   src: string;
   alt: string;
   caption?: string;
+  rotate90?: boolean;
 }
 
 interface HeroCarouselProps {
@@ -61,7 +62,11 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
               src={slide.src}
               alt={slide.alt}
               fill
-              className="object-cover"
+              className={
+                slide.rotate90
+                  ? "object-contain rotate-90 p-6"
+                  : "object-cover"
+              }
               priority={i === 0}
               sizes="(max-width: 768px) 100vw, 672px"
             />
