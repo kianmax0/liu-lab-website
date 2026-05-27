@@ -25,6 +25,12 @@ export const currentMembers: Member[] = [
     interests: "The relationship between social and hunger",
   },
   {
+    name: "Chechang NIE",
+    role: "Postdoctoral Fellow",
+    photo: "/images/team/ChechangNIE.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
     name: "Chenxing WEI",
     role: "RA",
     photo: "/images/team/ChenxingWEI.jpg",
@@ -55,6 +61,12 @@ export const currentMembers: Member[] = [
     interests: "Research interests to be updated.",
   },
   {
+    name: "Xinzhi CAO",
+    role: "Visiting Student",
+    photo: "/images/team/XinzhiCAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
     name: "Kun ZHAO",
     role: "Undergraduate",
     photo: "/images/team/KunZHAO.jpg",
@@ -70,6 +82,24 @@ export const currentMembers: Member[] = [
     name: "Zimeng GAO",
     role: "Ph.D. Student",
     photo: "/images/team/ZimengGAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Yitong XIA",
+    role: "Ph.D. Student",
+    photo: "/images/team/YitongXIA.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Jun HAO",
+    role: "Ph.D. Student",
+    photo: "/images/team/JunHAO.jpg",
+    interests: "Research interests to be updated.",
+  },
+  {
+    name: "Yeahyeah DAI",
+    role: "Ph.D. Student",
+    photo: "/images/team/YeahyeahDAI.jpg",
     interests: "Research interests to be updated.",
   },
 ];
