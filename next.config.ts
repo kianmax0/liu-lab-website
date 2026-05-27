@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
   basePath: "/liu-lab-website",
   assetPrefix: "/liu-lab-website",
   images: {
-    loader: "custom",
-    loaderFile: "./src/lib/imageLoader.ts",
+    unoptimized: true,
   },
 };
 
